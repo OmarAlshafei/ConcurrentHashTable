@@ -1,11 +1,11 @@
+#ifndef __hashdb__h__
+#define __hashdb__h__
+
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
 #include <string.h>
-#include "common_threads.h"
-#include "rwlocks.h"
-
 
 // this the linked list struct used to store all the information
 typedef struct hash_struct {
@@ -15,7 +15,9 @@ typedef struct hash_struct {
     struct hash_struct *next;
 } hashRecord;
 
-void insert(char *name, uint32_t salary);
-void search();
-void delete();
+void insertHash(char *name, uint32_t salary);
+void searchHash(char *name);
+void deleteHash(char *name);
+void printTable();
 
+#endif
